@@ -14,8 +14,8 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
         IntPtr renderPart,
         ovrAvatarRenderPart_SkinnedMeshRenderPBS_V2 skinnedMeshRender,
         OvrAvatarMaterialManager materialManager,
-        int thirdPersonLayer, 
-        int firstPersonLayer, 
+        int thirdPersonLayer,
+        int firstPersonLayer,
         int sortOrder,
         bool isCombinedMaterial,
         ovrAvatarAssetLevelOfDetail lod)
@@ -24,10 +24,10 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
         IsCombinedMaterial = isCombinedMaterial;
 
         mesh = CreateSkinnedMesh(
-            skinnedMeshRender.meshAssetID, 
-            skinnedMeshRender.visibilityMask, 
+            skinnedMeshRender.meshAssetID,
+            skinnedMeshRender.visibilityMask,
             thirdPersonLayer,
-            firstPersonLayer, 
+            firstPersonLayer,
             sortOrder);
 
 #if UNITY_ANDROID
@@ -40,7 +40,7 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
              ? Shader.Find("OvrAvatar/Avatar_Mobile_CombinedMesh")
              : Shader.Find(singleComponentShader);
 
-       AvatarLogger.Log("Shader is: " + shader.name);
+        AvatarLogger.Log("Shader is: " + shader.name);
 
         mesh.sharedMaterial = CreateAvatarMaterial(gameObject.name + "_material", shader);
         mesh.sharedMaterial.renderQueue = OvrAvatarMaterialManager.RENDER_QUEUE;
@@ -56,14 +56,14 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
     }
 
     public void UpdateSkinnedMeshRender(
-        OvrAvatarComponent component, 
-        OvrAvatar avatar, 
+        OvrAvatarComponent component,
+        OvrAvatar avatar,
         IntPtr renderPart)
     {
-        ovrAvatarVisibilityFlags visibilityMask 
+        ovrAvatarVisibilityFlags visibilityMask
             = CAPI.ovrAvatarSkinnedMeshRenderPBSV2_GetVisibilityMask(renderPart);
 
-        ovrAvatarTransform localTransform 
+        ovrAvatarTransform localTransform
             = CAPI.ovrAvatarSkinnedMeshRenderPBSV2_GetTransform(renderPart);
 
         UpdateSkinnedMesh(avatar, bones, localTransform, visibilityMask, renderPart);
@@ -98,7 +98,7 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
         {
             diffuseTexture = AvatarMaterialManager.DiffuseFallbacks[lodIndex];
         }
-            
+
         if (normalTexture == null)
         {
             normalTexture = AvatarMaterialManager.NormalFallbacks[lodIndex];
@@ -113,20 +113,20 @@ public class OvrAvatarSkinnedMeshPBSV2RenderComponent : OvrAvatarRenderComponent
         mesh.sharedMaterial.SetTexture(OvrAvatarMaterialManager.AVATAR_SHADER_NORMALMAP, normalTexture);
         mesh.sharedMaterial.SetTexture(OvrAvatarMaterialManager.AVATAR_SHADER_ROUGHNESSMAP, metallicTexture);
 
-        mesh.sharedMaterial.SetVector(OvrAvatarMaterialManager.AVATAR_SHADER_COLOR, 
+        mesh.sharedMaterial.SetVector(OvrAvatarMaterialManager.AVATAR_SHADER_COLOR,
             materialState.albedoMultiplier);
 
         mesh.sharedMaterial.SetFloat(OvrAvatarMaterialManager.AVATAR_SHADER_DIFFUSEINTENSITY,
-            defaultProperties[componentType].DiffuseIntensity);
+          defaultProperties[componentType].DiffuseIntensity);
 
         mesh.sharedMaterial.SetFloat(OvrAvatarMaterialManager.AVATAR_SHADER_RIMINTENSITY,
-            defaultProperties[componentType].RimIntensity);
+          defaultProperties[componentType].RimIntensity);
 
         mesh.sharedMaterial.SetFloat(OvrAvatarMaterialManager.AVATAR_SHADER_BACKLIGHTINTENSITY,
-            defaultProperties[componentType].BacklightIntensity);
+          defaultProperties[componentType].BacklightIntensity);
 
         mesh.sharedMaterial.SetFloat(OvrAvatarMaterialManager.AVATAR_SHADER_REFLECTIONINTENSITY,
-            defaultProperties[componentType].ReflectionIntensity);
+          defaultProperties[componentType].ReflectionIntensity);
 
         mesh.GetClosestReflectionProbes(AvatarMaterialManager.ReflectionProbes);
         if (AvatarMaterialManager.ReflectionProbes != null &&

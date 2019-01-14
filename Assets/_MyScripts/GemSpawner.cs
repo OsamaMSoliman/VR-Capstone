@@ -8,7 +8,6 @@ public class GemSpawner : MonoBehaviour
 
     private Transform GemsHolder;
 
-    public static Dictionary<Transform, float> DistanceToGem;
 
     private void Start()
     {
@@ -27,7 +26,7 @@ public class GemSpawner : MonoBehaviour
         GemsHolder = new GameObject("GemsHolder").transform;
         foreach (var pos in GemsLocations)
         {
-            Instantiate(GemPrefab, pos, Random.rotation, GemsHolder);
+            Instantiate(GemPrefab, pos + Vector3.up, Random.rotation, GemsHolder);
         }
     }
 
