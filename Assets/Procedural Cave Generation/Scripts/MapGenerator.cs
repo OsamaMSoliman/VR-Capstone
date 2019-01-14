@@ -21,15 +21,14 @@ public class MapGenerator : MonoBehaviour
 
 	private void Start() { GenerateMap(); }
 
-	private void Update()
-	{
-		if ( Input.GetMouseButtonDown(0) )
-		{
-			GenerateMap();
-			if ( signalGeneratingIsOver != null ) signalGeneratingIsOver();
-		}
-
-	}
+	//private void Update()
+	//{
+	//	if ( Input.GetMouseButtonDown(0) )
+	//	{
+	//		GenerateMap();
+	//		if ( signalGeneratingIsOver != null ) signalGeneratingIsOver();
+	//	}
+	//}
 
 	private void GenerateMap()
 	{

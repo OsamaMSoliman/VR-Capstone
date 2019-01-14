@@ -67,18 +67,14 @@ public class MeshGenerator : MonoBehaviour
 
 
 		if ( is2D )
-		{
 			Generate2DColliders();
-		}
 		else
-		{
 			CreateWallMesh();
-		}
+
 	}
 
 	private void CreateWallMesh()
 	{
-
 		MeshCollider currentCollider = GetComponent<MeshCollider>();
 		Destroy(currentCollider);
 
@@ -90,7 +86,6 @@ public class MeshGenerator : MonoBehaviour
 
 
 		foreach ( List<int> outline in outlines )
-		{
 			for ( int i = 0 ; i < outline.Count - 1 ; i++ )
 			{
 				int startIndex = wallVertices.Count;
@@ -107,7 +102,6 @@ public class MeshGenerator : MonoBehaviour
 				wallTriangles.Add(startIndex + 1);
 				wallTriangles.Add(startIndex + 0);
 			}
-		}
 		wallMesh.vertices = wallVertices.ToArray();
 		wallMesh.triangles = wallTriangles.ToArray();
 		walls.mesh = wallMesh;

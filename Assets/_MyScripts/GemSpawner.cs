@@ -7,8 +7,8 @@ public class GemSpawner : MonoBehaviour
 	[SerializeField] private GameObject GemPrefab;
 
 	private Transform GemsHolder;
-	private List<Vector3> GemsLocations;
 
+	public static Dictionary<Transform , float> DistanceToGem;
 
 	private void Start()
 	{
@@ -32,6 +32,8 @@ public class GemSpawner : MonoBehaviour
 	}
 
 
+	#region Testing
+	private List<Vector3> GemsLocations;
 	private void OnDrawGizmos()
 	{
 		if ( GemsLocations == null ) return;
@@ -39,6 +41,7 @@ public class GemSpawner : MonoBehaviour
 		{
 			Gizmos.DrawCube(gl + Vector3.up , Vector3.one);
 		}
-
 	}
+	#endregion
+
 }
