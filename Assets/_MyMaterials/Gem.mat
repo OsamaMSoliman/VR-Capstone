@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Gem
+  m_Shader: {fileID: 4800000, guid: 44cee535b9e88ff4ebda553fab72ad82, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_39258FF8:
+        m_Texture: {fileID: 2800000, guid: 78dbd2e2ed813e04dbbeab6d982981d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_4334CA50:
+        m_Texture: {fileID: 2800000, guid: 2efaa2ddf7595af4987d403f6a48a8bd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_71A41F9:
+        m_Texture: {fileID: 2800000, guid: 78dbd2e2ed813e04dbbeab6d982981d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_856D4425:
+        m_Texture: {fileID: 2800000, guid: c4cb56ed45fb93d428f0b362c9985f7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C1A37DF:
+        m_Texture: {fileID: 2800000, guid: fbacd829ce7fbb14ea63d4c6afcc5f06, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_8C5DFBA:
+        m_Texture: {fileID: 2800000, guid: 2efaa2ddf7595af4987d403f6a48a8bd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9EF673CB:
+        m_Texture: {fileID: 2800000, guid: db56133bdb0993a40b90a1241d093e13, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ADC68AA4:
+        m_Texture: {fileID: 2800000, guid: db56133bdb0993a40b90a1241d093e13, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ED38D194:
+        m_Texture: {fileID: 2800000, guid: c4cb56ed45fb93d428f0b362c9985f7c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_FEB4670D:
+        m_Texture: {fileID: 2800000, guid: fbacd829ce7fbb14ea63d4c6afcc5f06, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_CBDDCE1D: 0
+    - Boolean_D9AB7FF2: 0
+    - Vector1_601A9EF5: 0.05
+    - Vector1_6D64F4A3: 0.05
+    - Vector1_897E1301: 5
+    - Vector1_CE39B22F: 5
+    - Vector1_F2D88705: 0.25
+    - Vector1_FE8C72C3: 1
+    m_Colors:
+    - Color_1EB4CBA3: {r: 1, g: 0, b: 0, a: 0}
+    - Color_7E6BB6F2: {r: 0, g: 16, b: 16, a: 0}
+    - Color_8F2B3159: {r: 0, g: 2, b: 1.960784, a: 0}
+    - Color_CCCD07A9: {r: 0, g: 0, b: 0, a: 1}
+    - Color_F3797B5F: {r: 0, g: 2, b: 1.960784, a: 0}
+    - Color_FDBD5152: {r: 0, g: 16, b: 16, a: 0}

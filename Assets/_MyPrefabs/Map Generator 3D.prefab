@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 1324735382}
   m_Layer: 0
   m_Name: Map Generator 3D
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -344,6 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1130c219980e9d4989ae31d60b31e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemPrefab: {fileID: 955375083296168234, guid: 8b4a192d285d3824aa9a71143dc8f803,
+  GemPrefab: {fileID: 7012416054999337424, guid: f53da56dde4f6eb4cbf727382c1ebc5b,
     type: 3}
-  maxAmountPerLevel: 0
+  maxAmountPerLevel: 200
