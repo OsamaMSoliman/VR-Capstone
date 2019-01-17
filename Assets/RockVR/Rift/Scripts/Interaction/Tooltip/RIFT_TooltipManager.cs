@@ -155,13 +155,13 @@ namespace RockVR.Rift
         {
             if (transform.parent.name== "LeftHandAnchor")
             {
-                riftButtonModelTransform = transform.parent.FindChild("LeftControllerPf/left_touch_controller_model_skel/lctrl:left_touch_controller_world");
-                return riftButtonModelTransform.FindChild("lctrl:" + findTransform);
+                riftButtonModelTransform = transform.parent.Find("LeftControllerPf/left_touch_controller_model_skel/lctrl:left_touch_controller_world");
+                return riftButtonModelTransform.Find("lctrl:" + findTransform);
             }
             else if (transform.parent.name == "RightHandAnchor")
             {
-                riftButtonModelTransform = transform.parent.FindChild("RightControllerPf/right_touch_controller_model_skel/rctrl:right_touch_controller_world");
-                return riftButtonModelTransform.FindChild("rctrl:" + findTransform);
+                riftButtonModelTransform = transform.parent.Find("RightControllerPf/right_touch_controller_model_skel/rctrl:right_touch_controller_world");
+                return riftButtonModelTransform.Find("rctrl:" + findTransform);
             }
             return transform;
         }
