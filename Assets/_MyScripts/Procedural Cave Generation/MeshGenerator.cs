@@ -51,12 +51,8 @@ public class MeshGenerator
 		triangles = new List<int>();
 
 		for ( int x = 0 ; x < squareGrid.squares.GetLength(0) ; x++ )
-		{
 			for ( int y = 0 ; y < squareGrid.squares.GetLength(1) ; y++ )
-			{
 				TriangulateSquare(squareGrid.squares[x , y]);
-			}
-		}
 
 		Mesh mesh = new Mesh();
 		cave.mesh = mesh;
@@ -313,9 +309,7 @@ public class MeshGenerator
 		int nextVertexIndex = GetConnectedOutlineVertex(vertexIndex);
 
 		if ( nextVertexIndex != -1 )
-		{
 			FollowOutline(nextVertexIndex , outlineIndex);
-		}
 	}
 
 	private int GetConnectedOutlineVertex( int vertexIndex )
@@ -330,12 +324,8 @@ public class MeshGenerator
 			{
 				int vertexB = triangle[j];
 				if ( vertexB != vertexIndex && !checkedVertices.Contains(vertexB) )
-				{
 					if ( IsOutlineEdge(vertexIndex , vertexB) )
-					{
 						return vertexB;
-					}
-				}
 			}
 		}
 
@@ -352,10 +342,7 @@ public class MeshGenerator
 			if ( trianglesContainingVertexA[i].Contains(vertexB) )
 			{
 				sharedTriangleCount++;
-				if ( sharedTriangleCount > 1 )
-				{
-					break;
-				}
+				if ( sharedTriangleCount > 1 ) break;
 			}
 		}
 		return sharedTriangleCount == 1;
@@ -376,7 +363,7 @@ public class MeshGenerator
 		public int this[int i] { get { return vertices[i]; } }
 
 
-		public bool Contains( int vertexIndex ) { return vertexIndex == vertices[0] || vertexIndex == vertices[1] || vertexIndex == vertices[2]; }
+		public bool Contains( int vertexIndex ) => vertexIndex == vertices[0] || vertexIndex == vertices[1] || vertexIndex == vertices[2];
 	}
 
 	public class SquareGrid
@@ -432,14 +419,10 @@ public class MeshGenerator
 			centreBottom = bottomLeft.right;
 			centreLeft = bottomLeft.above;
 
-			if ( topLeft.active )
-				configuration += 8;
-			if ( topRight.active )
-				configuration += 4;
-			if ( bottomRight.active )
-				configuration += 2;
-			if ( bottomLeft.active )
-				configuration += 1;
+			if ( topLeft.active ) configuration += 8;
+			if ( topRight.active ) configuration += 4;
+			if ( bottomRight.active ) configuration += 2;
+			if ( bottomLeft.active ) configuration += 1;
 		}
 
 	}
@@ -449,10 +432,7 @@ public class MeshGenerator
 		public Vector3 position;
 		public int vertexIndex = -1;
 
-		public Node( Vector3 _pos )
-		{
-			position = _pos;
-		}
+		public Node( Vector3 _pos ) => position = _pos;
 	}
 
 	public class ControlNode : Node

@@ -325,8 +325,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 128
   height: 128
-  seed: 0
+  seed: 20
   useRandomSeed: 1
+  useTimeAsSeed: 0
   randomFillPercent: 48
   walls: {fileID: 1274809023}
   cave: {fileID: 478321072}
@@ -344,6 +345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1130c219980e9d4989ae31d60b31e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemPrefab: {fileID: 7012416054999337424, guid: f53da56dde4f6eb4cbf727382c1ebc5b,
+  CrystalPrefab: {fileID: 7012416054999337424, guid: f53da56dde4f6eb4cbf727382c1ebc5b,
     type: 3}
   maxAmountPerLevel: 200

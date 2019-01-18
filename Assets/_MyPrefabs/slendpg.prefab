@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 714142848}
   - component: {fileID: 2629579456025569696}
   - component: {fileID: 5816924864340419707}
+  - component: {fileID: 1163844535}
   m_Layer: 0
   m_Name: pCube9
   m_TagString: Untagged
@@ -181,6 +182,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &1163844535
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142840}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142841
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +212,7 @@ GameObject:
   - component: {fileID: 714142849}
   - component: {fileID: 2553502578197258295}
   - component: {fileID: 9012048966434960509}
+  - component: {fileID: 192699620}
   m_Layer: 0
   m_Name: pCube8
   m_TagString: Untagged
@@ -304,6 +322,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &192699620
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142841}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142842
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +352,7 @@ GameObject:
   - component: {fileID: 714142850}
   - component: {fileID: 6760253784885325330}
   - component: {fileID: 4759612415919324296}
+  - component: {fileID: 784739372}
   m_Layer: 0
   m_Name: pCube7
   m_TagString: Untagged
@@ -427,6 +462,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &784739372
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142842}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142843
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +492,7 @@ GameObject:
   - component: {fileID: 714142851}
   - component: {fileID: 4520579913744323224}
   - component: {fileID: 6840554089143640925}
+  - component: {fileID: 1943821543}
   m_Layer: 0
   m_Name: pCube6
   m_TagString: Untagged
@@ -550,6 +602,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &1943821543
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142843}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142844
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +632,7 @@ GameObject:
   - component: {fileID: 714142852}
   - component: {fileID: 5405144281151501435}
   - component: {fileID: 1282022187989206657}
+  - component: {fileID: 1183010961}
   m_Layer: 0
   m_Name: pCube5
   m_TagString: Untagged
@@ -673,6 +742,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &1183010961
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142844}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142845
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +772,7 @@ GameObject:
   - component: {fileID: 714142853}
   - component: {fileID: 3702245163899865742}
   - component: {fileID: 8246977521644018170}
+  - component: {fileID: 912853834}
   m_Layer: 0
   m_Name: pCube4
   m_TagString: Untagged
@@ -796,6 +882,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &912853834
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142845}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142846
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +912,7 @@ GameObject:
   - component: {fileID: 714142854}
   - component: {fileID: 1442492865376697094}
   - component: {fileID: 6970492293972819533}
+  - component: {fileID: 1816886041}
   m_Layer: 0
   m_Name: pCube3
   m_TagString: Untagged
@@ -919,6 +1022,22 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &1816886041
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142846}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &714142847
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +1052,7 @@ GameObject:
   - component: {fileID: 714142855}
   - component: {fileID: 5032529985271555061}
   - component: {fileID: 4884802529120162161}
+  - component: {fileID: 783880089}
   m_Layer: 0
   m_Name: pCube2
   m_TagString: Untagged
@@ -1042,3 +1162,19 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!54 &783880089
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714142847}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

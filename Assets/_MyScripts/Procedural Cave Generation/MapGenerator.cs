@@ -10,6 +10,7 @@ public class MapGenerator : MonoBehaviour
 	[SerializeField] private int height;
 	[SerializeField] private string seed;
 	[SerializeField] private bool useRandomSeed;
+	[SerializeField] private bool useTimeAsSeed;
 	[Range(0 , 100)]
 	[SerializeField] private int randomFillPercent;
 
@@ -24,6 +25,15 @@ public class MapGenerator : MonoBehaviour
 	private int[,] map;
 
 	public event Action SignalGeneratingIsOver;
+	private List<Room> survivingRooms;
+	public List<Vector3> PositionsInRooms()
+	{
+		List<Vector3> vs = new List<Vector3>();
+		foreach ( Room room in survivingRooms )
+			foreach ( Coord tile in room.tiles )
+				vs.Add(CoordToWorldPoint(tile));
+		return vs;
+	}
 
 	private void Start() { GenerateMap(); }
 
@@ -80,7 +90,7 @@ public class MapGenerator : MonoBehaviour
 
 		List<List<Coord>> roomRegions = GetRegions(0);
 		int roomThresholdSize = 50;
-		List<Room> survivingRooms = new List<Room>();
+		survivingRooms = new List<Room>();
 
 		foreach ( List<Coord> roomRegion in roomRegions )
 		{
@@ -247,8 +257,8 @@ public class MapGenerator : MonoBehaviour
 
 		return line;
 	}
-
-	private Vector3 CoordToWorldPoint( Coord tile ) => new Vector3(-width / 2 + .5f + tile.tileX , 2 , -height / 2 + .5f + tile.tileY);
+	//TODO:
+	private Vector3 CoordToWorldPoint( Coord tile ) => new Vector3(-width / 2 + .5f + tile.tileX , 0 , -height / 2 + .5f + tile.tileY);
 
 	private List<List<Coord>> GetRegions( int tileType )
 	{
@@ -307,33 +317,21 @@ public class MapGenerator : MonoBehaviour
 
 	private void RandomFillMap()
 	{
-		if ( useRandomSeed )
-		{
+		if ( useTimeAsSeed && !useRandomSeed )
 			seed = Time.time.ToString();
-		}
+		else if ( !useTimeAsSeed && useRandomSeed )
+			seed = UnityEngine.Random.value.ToString();
 
 		System.Random pseudoRandom = new System.Random(seed.GetHashCode());
 
 		for ( int x = 0 ; x < width ; x++ )
-		{
 			for ( int y = 0 ; y < height ; y++ )
-			{
-				if ( x == 0 || x == width - 1 || y == 0 || y == height - 1 )
-				{
-					map[x , y] = 1;
-				}
-				else
-				{
-					map[x , y] = (pseudoRandom.Next(0 , 100) < randomFillPercent) ? 1 : 0;
-				}
-			}
-		}
+				map[x , y] = (x == 0 || x == width - 1 || y == 0 || y == height - 1 || pseudoRandom.Next(0 , 100) < randomFillPercent) ? 1 : 0;
 	}
 
 	private void SmoothMap()
 	{
 		for ( int x = 0 ; x < width ; x++ )
-		{
 			for ( int y = 0 ; y < height ; y++ )
 			{
 				int neighbourWallTiles = GetSurroundingWallCount(x , y);
@@ -344,29 +342,22 @@ public class MapGenerator : MonoBehaviour
 					map[x , y] = 0;
 
 			}
-		}
 	}
 
 	private int GetSurroundingWallCount( int gridX , int gridY )
 	{
 		int wallCount = 0;
 		for ( int neighbourX = gridX - 1 ; neighbourX <= gridX + 1 ; neighbourX++ )
-		{
 			for ( int neighbourY = gridY - 1 ; neighbourY <= gridY + 1 ; neighbourY++ )
 			{
 				if ( IsInMapRange(neighbourX , neighbourY) )
 				{
 					if ( neighbourX != gridX || neighbourY != gridY )
-					{
 						wallCount += map[neighbourX , neighbourY];
-					}
 				}
 				else
-				{
 					wallCount++;
-				}
 			}
-		}
 
 		return wallCount;
 	}

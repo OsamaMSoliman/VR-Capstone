@@ -5,52 +5,53 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class LightTrailGuide : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
-    private NavMeshPath minPath;
+	private NavMeshAgent navMeshAgent;
+	private NavMeshPath minPath;
 
-    private void Awake() => navMeshAgent = GetComponent<NavMeshAgent>();
+	private void Awake() => navMeshAgent = GetComponent<NavMeshAgent>();
 
-    private void OnEnable() => StartCoroutine(CalcAllPathes());
+	private void OnEnable() => StartCoroutine(CalcAllPathes());
 
-    private static WaitForSeconds delay5s = new WaitForSeconds(5f);
-    private IEnumerator CalcAllPathes()
-    {
-        NavMeshPath minPath = null;
-        float minDistance = float.MaxValue;
-        foreach (var target in Objective.objectives)
-        {
-            if (target.gameObject.activeInHierarchy)
-            {
-                NavMeshPath path = new NavMeshPath();
-                if (NavMesh.CalculatePath(transform.position, target.transform.position, NavMesh.AllAreas, path))//&& path.status == NavMeshPathStatus.PathComplete )
-                {
-                    float temp = PathLength(path.corners);
-                    if (temp < minDistance)
-                    {
-                        minDistance = temp;
-                        minPath = path;
-                    }
-                }
-                yield return null;
-            }
-        }
-        if (minPath != null)
-        {
-            navMeshAgent.SetPath(minPath);
-            while (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance + 1)
-                yield return delay5s;
-            //TODO: make it dramatic (polishing)
-            gameObject.SetActive(false);
-            transform.SetParent(Compass.Self.Holder);
-        }
-    }
+	private IEnumerator CalcAllPathes()
+	{
+		NavMeshPath minPath = null;
+		float minDistance = float.MaxValue;
+		foreach ( var target in Objective.objectives )
+		{
+			if ( target.gameObject.activeInHierarchy )
+			{
+				NavMeshPath path = new NavMeshPath();
+				if ( NavMesh.CalculatePath(transform.position , target.transform.position , NavMesh.AllAreas , path) )//&& path.status == NavMeshPathStatus.PathComplete )
+				{
+					float temp = PathLength(path.corners);
+					if ( temp < minDistance )
+					{
+						minDistance = temp;
+						minPath = path;
+					}
+				}
+				yield return null;
+			}
+		}
+		if ( minPath != null )
+		{
+			navMeshAgent.SetPath(minPath);
+			while ( navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance + 1 )
+				yield return Wait.ForSeconds(5f);
+			for ( int i = 0 ; i < 3 ; i++ ) // don't disappear right away!
+				yield return Wait.ForSeconds(5f);
+			//TODO: make it dramatic (polishing)
+			gameObject.SetActive(false);
+			transform.SetParent(Compass.Self.Holder);
+		}
+	}
 
-    private float PathLength(Vector3[] corners)
-    {
-        if (corners.Length < 2) return 0;
-        float sum = 0;
-        for (int i = 0; i < corners.Length - 1; i++)
-            sum += Vector3.Distance(corners[i], corners[i + 1]);
-        return sum;
-    }
+	private float PathLength( Vector3[] corners )
+	{
+		if ( corners.Length < 2 ) return 0;
+		float sum = 0;
+		for ( int i = 0 ; i < corners.Length - 1 ; i++ )
+			sum += Vector3.Distance(corners[i] , corners[i + 1]);
+		return sum;
+	}
 }
