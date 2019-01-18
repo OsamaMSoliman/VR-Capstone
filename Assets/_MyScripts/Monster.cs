@@ -8,6 +8,8 @@ public class Monster : MonoBehaviour
 {
 	public static Monster Self { get; private set; }
 
+	[SerializeField] private AudioClip attackAudio;
+
 	private NavMeshAgent navMeshAgent;
 	private Animator animator;
 
@@ -36,6 +38,7 @@ public class Monster : MonoBehaviour
 	{
 		if ( !attacking )
 		{
+			if ( attackAudio != null ) GetComponent<AudioSource>().PlayOneShot(attackAudio);
 			attacking = true;
 			animator.SetInteger("AttackType" , Random.value > 0.5f ? 1 : 0);
 			Player.Self.GameOver();

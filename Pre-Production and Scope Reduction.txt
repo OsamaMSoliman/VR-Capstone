@@ -1,0 +1,25 @@
+Project Idea:
+=============
+A VR Game, where user has to do some Objectives(solve some puzzles) in a dark environment and a void a lurking monster.
+
+My games is very similar to the classic game "Slenderman" and I have taken the idea of avoiding the light from "Senua Hellblade".
+
+
+Main mechanics of the game:[doable]
+===========================
+1_) Randomly Generater environment. 
+2_) Overall Darkness.
+3_) some faint lights scatered in the world.
+4_) weather (fog or rain or snow).
+5_) player has the ability to summon magical light.
+6_) player can summon light orbs to guide him to the nearest objective.
+7_) player needs magical crystals for both of his abilities.
+8_) monster is attracted to the lights.
+9_) some puzzle scattered all over the environment for the player to solve.
+
+
+Scope Reduction: [removed ](Mainly due to Time)
+================
+1_) Replaced the Puzzles with a single puzzle, user has to collect 8 pages with the help of his "guide" ability. then a ball in the sky will descend and the player has to go investigate it on his own.
+2_) Kept summoning light ability "torch" without drainage consequences, just if it's on the monster will start hunting the player down.
+3_) Although, I enjoyed creating the Shaders, I faced some challenges and couldn't do all I planed, the game visuals is still lacking, compared to what I had in mind. (for example, the ground was supposed to be snowy and the player would leave a trail behind).

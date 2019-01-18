@@ -21,6 +21,7 @@ public class Objective : MonoBehaviour
 
 	private IEnumerator ObjectiveGrabbed()
 	{
+		GetComponent<AudioSource>().Play();
 		//NoisePower
 		renderer.material.SetFloat("Vector1_CE39B22F" , Random.value * 10);
 		//dissolve Color
