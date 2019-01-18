@@ -3,7 +3,7 @@ High-Immersion Specialization, Oculus Rift.
 
 The emotion: Fear.
 
-Video URL: 
+Video URL: https://youtu.be/rwINTlI-P44
 
 # Achievements:
 
@@ -12,7 +12,8 @@ Video URL:
  Animation achievement (100 points)
  Locomotion achievement (100 points)
  Physics achievement (100 points)
- Video Player achievement (100 points)
+ Video Player achievement (100 points) 
+ [Sphere has a VideoPlayer with RenderTexture on it]
 
 
 ## Completeness: 750
