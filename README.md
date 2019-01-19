@@ -3,7 +3,7 @@ High-Immersion Specialization, Oculus Rift.
 
 The emotion: Fear.
 
-Video URL: https://youtu.be/rwINTlI-P44
+Video URL: https://youtu.be/rwINTlI-P44 (Early on preview)
 
 # Achievements:
 
@@ -23,3 +23,10 @@ Video URL: https://youtu.be/rwINTlI-P44
 
 ## Challenges: 500
   Compute Shader achievement (500 points)
+  
+###NOTE:
+You can change the project from VR to Normal FPS game, I did this as I didn't have a HMD available all the time.
+Todo so, :D
+1_) Open up the Main scene. [VR-Capstone/Assets/_MyScenes/Main.unity]
+2_) Choose the Player GameObject from the Hierarchy.
+3_) Change the isVR boolean in the Inspector on the Player Script.
