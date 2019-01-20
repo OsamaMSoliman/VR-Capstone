@@ -9,6 +9,7 @@ public class Crystal : MonoBehaviour
 	private new Renderer renderer;
 	private bool isConsumed;
 	private OVRGrabbable grabbable;
+	private bool NotRotating;
 
 	private void Start()
 	{
@@ -16,7 +17,7 @@ public class Crystal : MonoBehaviour
 		if ( renderer == null ) Debug.LogError("no renderer in the children" , gameObject);
 		grabbable = GetComponent<OVRGrabbable>();
 		grabbable.GrabStartSignal += Grabbed;
-		//StartCoroutine(ProduceShaderAnimation());
+		NotRotating = true;
 	}
 
 	private IEnumerator Consume()
@@ -56,12 +57,15 @@ public class Crystal : MonoBehaviour
 			}
 			// dissolve = true
 			renderer.material.SetFloat("Boolean_D9AB7FF2" , 0);
-
-			Vector3 rotationDirection = transform.position + Random.onUnitSphere;
-			while ( true )
+			if ( NotRotating )
 			{
-				transform.Rotate(rotationDirection);
-				yield return Wait.ForSeconds(0.1f);
+				NotRotating = false;
+				Vector3 rotationDirection = transform.position + Random.onUnitSphere;
+				while ( true )
+				{
+					transform.Rotate(rotationDirection);
+					yield return Wait.ForSeconds(0.1f);
+				}
 			}
 		}
 	}

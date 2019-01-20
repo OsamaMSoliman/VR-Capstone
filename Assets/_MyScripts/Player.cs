@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 		Self = this;
 
 		transform.GetChild(isVR ? 0 : 1).gameObject.SetActive(true);
-		canvas.gameObject.SetActive(!isVR);
+		//canvas.gameObject.SetActive(!isVR);
 		Fog.transform.SetParent(transform.GetChild(isVR ? 0 : 1));
 		head = GetComponentInChildren<HeadBehaviour>();
 	}

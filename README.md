@@ -5,6 +5,8 @@ The emotion: Fear.
 
 Video URL: https://youtu.be/rwINTlI-P44 (Early on preview)
 
+Video URL: https://youtu.be/l2QZtmHBReI (Current, Achievements Video)
+
 # Achievements:
 
 ## Fundamentals: 500
